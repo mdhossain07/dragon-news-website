@@ -3,7 +3,8 @@ import cardImg1 from "../../assets/1.png";
 import cardImg2 from "../../assets/2.png";
 import cardImg3 from "../../assets/3.png";
 import frame from "../../assets/Frame.svg";
-const NewsCard = () => {
+
+const SideBarCard = () => {
   return (
     <div>
       <div className="space-y-2 mb-5">
@@ -49,4 +50,4 @@ const NewsCard = () => {
   );
 };
 
-export default NewsCard;
+export default SideBarCard;

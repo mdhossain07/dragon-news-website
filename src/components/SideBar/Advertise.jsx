@@ -4,8 +4,8 @@ const Advertise = () => {
   return (
     <>
       <div className="mt-8 relative">
-        <img className="" src={advertise} alt="" />
-        <div className="absolute top-0 m-8 text-[white] text-center space-y-5">
+        <img className="w-full" src={advertise} alt="" />
+        <div className="absolute top-20 lg:top-0 m-8 text-[white] text-center space-y-5">
           <h2 className="text-3xl font-bold mt-10">
             Create an Amazing Newspaper
           </h2>

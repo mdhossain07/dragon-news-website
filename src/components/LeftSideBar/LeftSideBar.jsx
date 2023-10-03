@@ -1,11 +1,11 @@
 import Categories from "./Categories";
-import NewsCard from "./NewsCard";
+import SideBarCard from "./SideBarCard";
 
 const LeftSideBar = () => {
   return (
     <div>
       <Categories />
-      <NewsCard />
+      <SideBarCard />
     </div>
   );
 };

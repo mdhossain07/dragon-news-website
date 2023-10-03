@@ -8,8 +8,8 @@ const Logo = () => {
       <h3 className="text-md font-medium text-[#706F6F]">
         Journalism without fear or favour
       </h3>
-      <p className="text-lg">
-        {moment().format("dddd, MMMM Do YYYY, h:mm:ss a")}
+      <p className="text-md text-[#403F3F]">
+        {moment().format(`dddd, MMMM Do YYYY, h:mm:ss a`)}
       </p>
     </div>
   );
