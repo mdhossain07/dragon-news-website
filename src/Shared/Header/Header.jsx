@@ -1,6 +1,6 @@
-import Logo from "../../components/Logo";
-import Navbar from "../../components/Navbar";
-import Slider from "../../components/Slider";
+import Logo from "../Header/Logo";
+import Navbar from "../../Shared/Navbar";
+import Slider from "../Header/Slider";
 
 const Header = () => {
   return (

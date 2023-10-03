@@ -1,5 +1,5 @@
 import moment from "moment/moment";
-import logo from "../../src/assets/logo.png";
+import logo from "../../../src/assets/logo.png";
 
 const Logo = () => {
   return (
