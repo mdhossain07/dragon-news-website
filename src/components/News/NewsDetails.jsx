@@ -8,9 +8,7 @@ const NewsDetails = () => {
 
   const matchedItems = news?.find((item) => item._id == id);
 
-  const { image_url, title, details, thumbnail_url } = matchedItems;
-
-  console.log(matchedItems);
+  const { image_url, title, details } = matchedItems;
 
   return (
     <div className="container mx-auto px-8 md:px-16 lg:px-24">
