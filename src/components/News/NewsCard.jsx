@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import bookmark from "../../assets/Bookmark.svg";
 import share from "../../assets/Share.svg";
 import view from "../../assets/Views.svg";
 
 const NewsCard = ({ news }) => {
-  const { author, title, thumbnail_url, details, rating, total_view } = news;
+  const { author, title, thumbnail_url, details, rating, total_view, _id } =
+    news;
   console.log(news);
   return (
     <div className="mb-16">
@@ -40,12 +42,24 @@ const NewsCard = ({ news }) => {
           src={thumbnail_url}
           alt=""
         />
-        <p className="text-sm text-[#706F6F]">{details.slice(0, 300)}</p>
-        <span>
-          <a className="text-[#FF8C47] text-base font-semibold" href="">
-            Read more...
-          </a>
-        </span>
+
+        {details.length > 200 ? (
+          <div>
+            <p className="text-sm text-[#706F6F]">{details.slice(0, 300)}</p>
+            <span>
+              <Link
+                className="text-[#FF8C47] text-sm font-semibold"
+                to={`/news/${_id}`}
+              >
+                Read More
+              </Link>
+            </span>
+          </div>
+        ) : (
+          <div>
+            <p className="text-sm text-[#706F6F]">{details}</p>
+          </div>
+        )}
       </section>
 
       {/* News Views & Ratings*/}

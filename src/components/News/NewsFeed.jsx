@@ -12,9 +12,12 @@ const NewsFeed = () => {
 
   return (
     <div>
-      {newsFeed.slice(0, 3).map((news) => (
+      {newsFeed.slice(0, 2).map((news) => (
         <NewsCard key={news.id} news={news}></NewsCard>
       ))}
+      <div className="flex justify-center">
+        <button className="btn btn-neutral">See More </button>
+      </div>
     </div>
   );
 };

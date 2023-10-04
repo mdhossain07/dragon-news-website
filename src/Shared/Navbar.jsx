@@ -1,7 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import userImg from "../assets/user.png";
+import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const { user, logOut } = useAuth();
+
   const navLinks = (
     <>
       <li>
@@ -17,7 +21,7 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -55,7 +59,23 @@ const Navbar = () => {
                 <img src={userImg} />
               </div>
             </label>
-            <a className="btn btn-neutral">Login</a>
+
+            {user ? (
+              <Link to="/">
+                <button
+                  onClick={() => {
+                    logOut().then(toast.success("Logged Out Successfully!"));
+                  }}
+                  className="btn btn-neutral"
+                >
+                  Logout
+                </button>
+              </Link>
+            ) : (
+              <Link to="/login" className="btn btn-neutral">
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>
