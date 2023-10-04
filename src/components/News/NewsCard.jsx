@@ -7,7 +7,6 @@ import view from "../../assets/Views.svg";
 const NewsCard = ({ news }) => {
   const { author, title, thumbnail_url, details, rating, total_view, _id } =
     news;
-  console.log(news);
   return (
     <div className="mb-16">
       {/* Author Profile */}
@@ -22,9 +21,7 @@ const NewsCard = ({ news }) => {
           </div>
           <div>
             <h2 className="text-sm font-semibold">{author.name}</h2>
-            <p className="text-[#706F6F] text-xs">
-              {author.published_date.split(" ")[0]}
-            </p>
+            <p className="text-[#706F6F] text-xs">{author.published_date}</p>
           </div>
         </div>
 

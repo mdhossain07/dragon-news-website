@@ -5,7 +5,7 @@ import QZone from "../../components/SideBar/QZone";
 
 const RightSideBar = () => {
   return (
-    <div className="p-3">
+    <div className="p-3 sticky top-2">
       <LoginWith />
       <FindUs />
       <QZone />

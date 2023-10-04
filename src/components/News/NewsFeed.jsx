@@ -3,22 +3,39 @@ import NewsCard from "./NewsCard";
 
 const NewsFeed = () => {
   const [newsFeed, setNewsFeed] = useState([]);
+  const [seeMore, setSeeMore] = useState(false);
 
   useEffect(() => {
     fetch("news.json")
       .then((res) => res.json())
       .then((data) => setNewsFeed(data));
   }, []);
-
+  console.log(seeMore);
   return (
-    <div>
-      {newsFeed.slice(0, 2).map((news) => (
-        <NewsCard key={news.id} news={news}></NewsCard>
-      ))}
+    <>
+      {seeMore ? (
+        <div>
+          {newsFeed?.map((news) => (
+            <NewsCard key={news.id} news={news}></NewsCard>
+          ))}
+        </div>
+      ) : (
+        <div>
+          {newsFeed.slice(0, 3)?.map((news) => (
+            <NewsCard key={news.id} news={news}></NewsCard>
+          ))}
+        </div>
+      )}
+
       <div className="flex justify-center">
-        <button className="btn btn-neutral">See More </button>
+        <button
+          onClick={() => setSeeMore(!seeMore)}
+          className="btn btn-neutral"
+        >
+          {seeMore ? "See Less" : "See More"}
+        </button>
       </div>
-    </div>
+    </>
   );
 };
 
